@@ -1,0 +1,25 @@
+body
+{
+    margin:0;
+    background: gray;
+    padding-left: 10px;
+    color: greenyellow;
+}
+canvas
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;  
+}
+h1
+{
+    color: greenyellow;
+}
+h2
+{
+    color:ghostwhite;
+}
+div
+{
+    color:greenyellow;
+}
