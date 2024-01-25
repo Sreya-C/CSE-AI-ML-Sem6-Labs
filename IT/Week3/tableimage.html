@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Table</title>
+	<style>
+		table, th, td {
+		  border: 1px solid black;
+		  border-collapse: collapse;
+		  padding: 10px;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-3.7.1.js"></script>
+	<script type="text/javascript" langauge="javascript">
+		$(document).ready(function() {
+				$("table tr:even").css({"background-color":"gray"});
+				$("table tr:odd").css({"background-color":"pink"});
+				$("#button").click(function() {
+					$("#mydiv").animate({right:'1450px'});
+				});
+			}); 
+	</script>
+</head>
+<body>
+	<div id="mydiv" style="position: relative; float:right;">
+		<table>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Roll</th>
+				<th>Grade</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Abc</td>
+				<td>21201</td>
+				<td>95</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Def</td>
+				<td>21202</td>
+				<td>97</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Ghi</td>
+				<td>21203</td>
+				<td>87</td>
+			</tr>
+		</table>
+	<img src="img1" alt="Image" height="120" width="200" style="position: relative;  float:right;">
+	</div>
+	<br>
+	<input type="button" value="Click to move" id="button"></input>
+</body>
+</html>
