@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<title>Bill</title>
+	<script type="text/javascript" src="jquery-3.7.1.js"></script>
+	<script type="text/javascript" langauge="javascript">
+		$(document).ready(function() {
+			$("#bill").on("click", function () {
+         	Calculate();
+        	});
+     	});
+      	function Calculate() {
+	        var premium = CompPrem();
+	        console.log(premium);
+	        var devTypePrice = CalcCheckBox();
+	        var quant = parseInt($("#quantity").val());
+	        var result = (premium + devTypePrice) * quant;
+	        $("#result").html("The result is : " + result);
+	    }
+     	function CompPrem() {
+	        var selectedBrand;
+	        var val = 0;
+	        selectedBrand = $("#brand-names").val();
+	        if (selectedBrand == "hp") {
+	        	val = 5000;
+	        } else if (selectedBrand == "nokia") {
+	        	val = 1000;
+	        } else if (selectedBrand == "samsung") {
+	        	val = 8000;
+	        } else if (selectedBrand == "motorola") {
+	        	val = 3000;
+	        } else if (selectedBrand == "apple") {
+	        	val = 10000;
+	        }
+	        return val;
+      	}
+    	function CalcCheckBox() {
+	        var val = 0;
+	        if ($("#mobile").prop("checked")) {
+	          val += 50000;
+	        }
+	        if ($("#laptop").prop("checked")) {
+	          val += 100000;
+	        }
+	        return val;
+    	}	
+	</script>
+</head>
+<body>
+	<div>
+		<p1>Choose a Brand:</p1>
+			<select name="brand-names" id="brand-names">
+				<option value="hp">HP</option>
+				<option value="nokia">Nokia</option>
+				<option value="samsung">Samsung</option>
+				<option value="motorola">Motorola</option>
+				<option value="apple">Apple</option>
+			</select>
+		<br><br>
+
+		<p1>Choose Product(s)</p1>
+		<input type="checkbox" id="laptop" name="product" value="laptop"> <span>Laptop</span>
+		<input type="checkbox" id="mobile" name="product" value="mobile"> <span>Mobile</span>
+		<br><br>
+
+		<p1>Enter Quantity</p1>
+		<input type="text" id="quantity">
+
+		<input type="button" id="bill" value="Produce Bill"/>
+		<br><br>
+	    <br><br>
+		<h2>
+	    	<div id="result"></div>
+	    </h2>
+	</div>
+</body>
+</html>
