@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Two Rectangles</title>
+        <style>
+            canvas{
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="400" height="300"></canvas>
+        <script>
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = "red";
+            ctx.fillRect(10, 10, 80, 100);
+
+            ctx.fillStyle = "blue";
+            ctx.save(); // Save the current state of the canvas
+            // ctx.translate(200, 100); // Move the origin to the center of the rectangle
+            ctx.rotate(-Math.PI / 4); // Rotate the canvas by 45 degrees
+            ctx.fillRect(-80, -50, 100, 80); // x, y, width, height (centered at the origin)
+            ctx.restore();// Rotate the canvas by 45 degrees
+        </script>
+    </body>
+</html>
