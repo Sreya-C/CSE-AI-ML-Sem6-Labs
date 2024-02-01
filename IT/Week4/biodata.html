@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Student Bio-data</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<script src="jquery-3.7.1.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+		<script	src="bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+	    <h1>Student Information</h1>
+	    <form>
+	      <span>Name:   <input type="text" id="fname" name="fname"><br></span>
+	      <p>Gender:
+	      <input type="radio" id="male" name="gender" value="male"> Male
+	      <input type="radio" id="female" name="gender" value="female"> Female
+	      </p>
+	      <table class="table table-dark table-striped w-50 center">
+	        <thead>
+	          <tr>
+	            <th scope="col-sm-3">SNo</th>
+	            <th scope="col-sm-6">Name</th>
+				<th scope="col-sm-3">Age</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <th scope="row">1</th>
+	            <td>A</td>
+				<td>10</td>
+	          </tr>
+	          <tr>
+	            <th scope="row">2</th>
+	            <td>B</td>
+				<td>10</td>
+	          </tr>
+	          <tr>
+	            <th scope="row">3</th>
+	            <td>C</td>
+				<td>11</td>
+	          </tr>
+	        </tbody>
+	      </table>
+	      <input type="checkbox" id="School1" value="BRP">&nbspAccept terms & conditions<br/>
+	      <input type="submit" value="Submit" class="btn btn-danger">
+	      
+	    </form>
+	  </div>
+	</body>
+</html>
