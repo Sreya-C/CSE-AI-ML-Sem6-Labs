@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Find Data Type</title>
+        <script src="jquery-3.7.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                $(".button").click(function(){
+                    var input = document.getElementById("txt").value;
+                    var answer;
+                    if (!isNaN(Number(input))) answer = "Integer";
+                    else if(input=="False" || input=="True") answer = "Boolean";
+                    else answer="String";
+                    var output = document.getElementById("answer");
+                    output.value = answer;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        Enter a string/integer/boolean: 
+        <input type="text" name="input" id="txt">
+        <input type="button" name="Submit" value="Submit" class="button"><br/>
+        DataType: 
+        <input type="text" name="answer" id="answer" id="answer">
+    </body>
+</html>

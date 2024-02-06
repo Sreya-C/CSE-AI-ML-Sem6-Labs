@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sum and Product</title>
+        <script src="jquery-3.7.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                $(".button").click(function(){
+                    var txt = document.getElementById("numbers").value;
+                    var nums = txt.split(" ");
+                    var sum=0,prod=1;
+                    for (let i of nums) {
+                        sum += Number(i);
+                        prod*= Number(i);
+                    }
+                    alert("Sum = "+sum+" Product = "+prod);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        Enter array of numbers: <input type="text" name="numbers" id="numbers">
+        <br/>
+        <input type="button" value="Submit" class="button"></button>
+    </body>
+</html>

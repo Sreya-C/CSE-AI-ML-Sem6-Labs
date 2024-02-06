@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sort 3</title>
+        <script src="jquery-3.7.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                alert("This: "+Number(True));
+                $(".button").click(function(){
+                    var txt1 = document.getElementById("num1").value
+                    var txt2 = document.getElementById("num2").value
+                    var txt3 = document.getElementById("num3").value
+                    var num1=Number(txt1),num2=Number(txt2),num3=Number(txt3);
+                    console.log(num1,num2,num3);
+                    if (num1 <= num2 && num1 <= num3)
+                    {
+                        if (num2<=num3) alert("Sorted order: "+num1+" "+num2+" "+num3);
+                        else alert("Sorted order: "+num1+" "+num3+" "+num2);
+                    }
+                    else if (num2 < num1 && num2 <= num3)
+                    {
+                        if (num1<=num3) alert("Sorted order: "+num2+" "+num1+" "+num3);
+                        else alert("Sorted order: "+num2+" "+num3+" "+num1);
+                    }
+                    else
+                    {
+                        console.log("hello");
+                        if (num1<=num2) alert("Sorted order: "+num3+" "+num1+" "+num2);
+                        else alert("Sorted order: "+num3+" "+num2+" "+num1);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        Enter Num1: <input type="text" name="numbers" id="num1"><br/>
+        Enter Num2: <input type="text" name="numbers" id="num2"><br/>
+        Enter Num3: <input type="text" name="numbers" id="num3"><br/>
+        <input type="button" value="Submit" class="button"></button>
+    </body>
+</html>
