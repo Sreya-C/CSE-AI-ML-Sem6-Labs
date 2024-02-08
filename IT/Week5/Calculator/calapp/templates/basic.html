@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        #calculateButton {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #resultLabel {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Arithmetic Operations</h1>
+    <label for="num1">First Number:</label>
+    <input type="number" id="num1" required>
+    <label for="num2">Second Number:</label>
+    <input type="number" id="num2" required>
+    <label for="operation">Select Operation:</label>
+    <select id="operation">
+        <option value="addition">Addition</option>
+        <option value="subtraction">Subtraction</option>
+        <option value="multiplication">Multiplication</option>
+        <option value="division">Division</option>
+    </select>
+    <button id="calculateButton">Calculate</button>
+    <label id="resultLabel"></label>
+
+    <script>
+        document.getElementById("calculateButton").addEventListener("click", function() {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var operation = document.getElementById("operation").value;
+            var result;
+
+            switch (operation) {
+                case "addition":
+                    result = num1 + num2;
+                    break;
+                case "subtraction":
+                    result = num1 - num2;
+                    break;
+                case "multiplication":
+                    result = num1 * num2;
+                    break;
+                case "division":
+                    if (num2 !== 0) {
+                        result = num1 / num2;
+                    } else {
+                        result = "Cannot divide by zero";
+                    }
+                    break;
+                default:
+                    result = "Invalid operation";
+            }
+
+            document.getElementById("resultLabel").textContent = "Result: " + result;
+        });
+    </script>
+</body>
+</html>
