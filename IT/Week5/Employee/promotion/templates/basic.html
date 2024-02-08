@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotion Eligibility Checker</title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        #checkButton {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #resultLabel {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Promotion Eligibility Checker</h1>
+    <label for="employeeId">Employee ID:</label>
+    <select id="employeeId">
+        <option value="101">101</option>
+        <option value="102">102</option>
+        <option value="103">103</option>
+        <!-- Add more options as needed -->
+    </select>
+    <label for="dateOfJoining">Date of Joining:</label>
+    <input type="text" id="dateOfJoining" placeholder="YYYY-MM-DD">
+    <button id="checkButton">Am I Eligible for Promotion</button>
+    <label id="resultLabel"></label>
+
+    <script>
+        document.getElementById("checkButton").addEventListener("click", function() {
+            var selectedEmployeeId = document.getElementById("employeeId").value;
+            var dateOfJoining = new Date(document.getElementById("dateOfJoining").value);
+            var currentDate = new Date();
+            var differenceInYears = currentDate.getFullYear() - dateOfJoining.getFullYear();
+
+            if (differenceInYears >= 5) {
+                document.getElementById("resultLabel").textContent = "YES";
+            } else {
+                document.getElementById("resultLabel").textContent = "NO";
+            }
+        });
+    </script>
+</body>
+</html>
