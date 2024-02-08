@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Front Cover Generator</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">  
+</head>
+<body>
+    <div class="cover">
+        <h1 id="title">Magazine Title</h1>
+        <p id="subtitle">Subtitle</p>
+        <img id="coverImage" src="placeholder.jpg" alt="Cover Image">
+    </div>
+
+    <div class="options">
+        <h2>Customize Options</h2>
+        <label for="titleInput">Title:</label>
+        <input type="text" id="titleInput">
+
+        <label for="subtitleInput">Subtitle:</label>
+        <input type="text" id="subtitleInput">
+
+        <label for="imageInput">Select Image:</label>
+        <input type="file" id="imageInput">
+
+        <label for="backgroundColorInput">Background Color:</label>
+        <input type="color" id="backgroundColorInput">
+
+        <label for="fontSizeInput">Font Size:</label>
+        <input type="range" id="fontSizeInput" min="10" max="50" value="20">
+
+        <label for="fontColorInput">Font Color:</label>
+        <input type="color" id="fontColorInput">
+
+        <button id="applyButton">Apply Changes</button>
+    </div>
+
+    <script>
+        document.getElementById("applyButton").addEventListener("click", function() {
+        var title = document.getElementById("titleInput").value;
+        var subtitle = document.getElementById("subtitleInput").value;
+        var imageInput = document.getElementById("imageInput").files[0];
+        var backgroundColor = document.getElementById("backgroundColorInput").value;
+        var fontSize = document.getElementById("fontSizeInput").value + "px";
+        var fontColor = document.getElementById("fontColorInput").value;
+
+        // Apply changes to front cover
+        document.getElementById("title").innerText = title;
+        document.getElementById("subtitle").innerText = subtitle;
+        document.getElementById("coverImage").src = URL.createObjectURL(imageInput);
+        document.querySelector(".cover").style.backgroundColor = backgroundColor;
+        document.getElementById("title").style.fontSize = fontSize;
+        document.getElementById("subtitle").style.fontSize = fontSize;
+        document.getElementById("title").style.color = fontColor;
+        document.getElementById("subtitle").style.color = fontColor;
+    });
+    </script>
+</body>
+</html>
