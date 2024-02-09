@@ -2,14 +2,14 @@
 <html>
 <head>
 	<title>Calculator</title>
-	<script type="text/javascript" src="jquery-3.7.1.js"></script>
+	<script type="text/javascript" src="jquery-3.7.1.min.js"></script>
 	<script type="text/javascript" langauge="javascript">
 		$(document).ready(function() {
 				$(".button").click(function() {
 					var op1 = $("#op1").val();
-					$("#op1").html("");
+					$("#op1").val("");
 					var op2 = $("#op2").val();
-					$("#op2").html("");
+					$("#op2").val("");
 					var ans=0;
 					var selected = $(this).val();
 					switch (selected) {
