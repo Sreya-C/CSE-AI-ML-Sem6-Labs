@@ -75,3 +75,31 @@ print(rand_2)
 mul = random_tensor @ rand_2.T
 print("After multiplication: ")
 print(mul)
+
+import torch
+
+#Create 2 random tensors of size (2,3) and send them to GPU
+t1 = torch.rand(2,3)
+t2 = torch.rand(2,3)
+t1_g = t1.to("cuda")
+t2_g = t2.to("cuda")
+print(t1_g)
+print(t2_g)
+
+#Perform Matrix multiplication
+tmul = torch.matmul(t1_g,t2_g.T)
+print(tmul)
+
+#Get max and min values of the 2 random tensors
+print(t1_g.max(),t2_g.max())
+print(t1_g.min(),t2_g.min())
+
+#Get max and min index values of the 2 random tensors
+print(t1_g.argmax(),t2_g.argmax())
+print(t1_g.argmin(),t2_g.argmin())
+
+#Random tensor with shape(1,1,1,10) and remove all dimensions with shape 1
+t3 = torch.rand(1,1,1,10)
+print(t3.shape)
+t3 = torch.squeeze(t3)
+print(t3.shape)
