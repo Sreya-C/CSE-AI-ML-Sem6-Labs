@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Choose Color</title>
+        <script type="text/javascript">
+            function changeColor(color){
+                let myDiv = document.getElementById("myDiv");
+                console.log(color);
+                if(color === "red"){ 
+                    console.log("Inside Red");
+                    myDiv.style.backgroundColor = "red";}
+                else if (color === "blue") {
+                    console.log("Inside Blue");
+                    myDiv.style.backgroundColor = "blue";
+                } else if (color === "green") {
+                    console.log("Inside Green");
+                    myDiv.style.backgroundColor = "green";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Choose Color:
+        <br>    
+        <input type="radio" id="red" name="color" value="red" onclick="changeColor('red')"><label for="color">red</label><br>
+        <input type="radio" id="blue" name="color" value="blue" onclick="changeColor('blue')"><label for="color">blue</label><br>
+        <input type="radio" id="green" name="color" value="green" onclick="changeColor('green')"><label for="color">green</label><br>
+        <br>
+        <div id="myDiv" width="30" height="60"><br><br><br><br><br><br></div>
+    </body>
+</html>

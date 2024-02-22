@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quizzz</title>
+        <script src="jquery-3.7.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.button').click(function(){
+                    let email = document.getElementById("mail");
+                    let present = 0;
+                    for (let character in email.value){
+                        if (character === '@') present += 1
+                    }
+                    if (present === 0 || present>0) document.getElementById("emailval").innerHTML = "Please enter a valid email address";
+                });
+            });
+        </script>
+    </head>
+    <body>
+        Enter your name: 
+        <input text="Name" placeholder="Name goes here"><br>
+        Enter your email address:
+        <input id="mail" text="Email" placeholder="Email goes here">
+        <span style="color:red;font-size:1;" id="emailval"></span><br>
+        <button class="button">Submit</button>
+    </body>
+</html>

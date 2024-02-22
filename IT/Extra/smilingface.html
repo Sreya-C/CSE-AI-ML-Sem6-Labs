@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Smiling Face</title></head>
+    <body>
+        <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(150, 150, 100, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(110,110);
+            ctx.lineTo(110,140);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(190,110);
+            ctx.lineTo(190,140);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(150, 170, 60, 0, Math.PI-0.9,false);
+            ctx.stroke();
+        </script>
+    </body>
+</html>
