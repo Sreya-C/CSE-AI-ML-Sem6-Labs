@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hampi Tourism</title>
+		<script src="jquery-3.7.1.js"></script>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<script src="bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				console.log("Loaded");
+				$("#calculate").click(function(){
+					console.log("Generating Fees");
+					var fees=0;
+					var age=  parseInt(document.getElementById("age").value);
+					console.log("AGE:",age);
+					if(age>15) fees += 50;
+					else if(age>=3 && age<16) fees += 25;
+					console.log("Here");
+					if($("#camera").is(":checked")) fees+= 10;
+					if($("#buggy").is(":checked")){
+						console.log("inside buggy");
+						if(age>15) fees += 200;
+						else if(age>=3 && age<16) fees += 100;
+					};
+					console.log("Fees = ",fees);
+					document.getElementById("fees").innerHTML = fees;				
+				});
+				document.getElementById("fees").value = fees;	
+			});
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<img alt="Hampi Image" src="img2.jpeg" width="500" height="400">
+			<p>Hampi is a town in Karnataka, with monuments of Vijayanagar Empire. UNESCO World Heritage site since 1986. </p>
+		</div>
+		<form class="form-control">
+			<b>Name: </b><input type="text" id="name"><br><br>
+			<b>Age: </b><input type="number" id="age"><br><br>
+			<b>Gender: </b> 
+			<input type="radio" id="male" name="gender"><label for="male">Male</label>
+			<input type="radio" id="female" name="gender"><label for="female">Female</label><br><br>
+			<b>Adhar/Passport Number: </b><input type="text" id="identity"><br><br>
+			<input type="checkbox" id="camera"><label for="camera">Take Camera</label>&nbsp;&nbsp;
+			<input type="checkbox" id="buggy"><label for="buggy">Take Buggy</label><br><br>
+			<button class="btn btn-info" id="calculate">Calculate Fees</button><br><br>
+			<h1 id="fees" style="align-content:center;"></h1>
+		</form>
+	</body>
+</html>
