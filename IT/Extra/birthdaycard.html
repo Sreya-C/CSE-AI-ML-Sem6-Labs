@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Birthday Card</title>   
+        <script src="jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#update").click(function(){
+                    $("#card").css("background-color",$("#bgcolor").val());
+                    $("#greet").css("font-family",$("#font").val());
+                    $("#greet").css("font-size",parseInt($("#fontsize").val()));
+                    $("#greet").text($("#greeting").val());
+                        
+                    if($("#none").is(":checked")){
+                        $("#card").css("border-style","None");
+                    }
+                    else if($("#double").is(":checked")){
+                        $("#card").css("border-style","Double");
+                    }
+                    else if($("#solid").is(":checked")){
+                        $("#card").css("border-style","solid");
+                    }
+
+                    if($("#addpic").prop("checked")==true){
+                        $("img").attr("src", "img2.jpeg");
+                        $("img").attr("width", "300px");
+                        $("img").attr("height", "300px");
+                    }
+                    else{
+                            $("img").attr("src","");
+                            $("img").attr("width", "");
+                            $("img").attr("height", "");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; width: 400px; height: 600px; right:100px; align-items: center; border: 10px" id="card">
+            <p id="greet" align="center"></p>
+			<img  width="0px" height="0px" alt="Image" style="margin-left: 50px" id="img">
+        </div>
+        Choose a background color:
+        <select name="bgcolor" id="bgcolor">
+            <option value="" selected>Choose Background Color</option>
+            <option value="pink" id="pink">Pink</option>
+            <option value="gray" id="gray">Gray</option>
+            <option value="greenyellow" id="gy">Green-Yellow</option>
+        </select>
+        <br><br>
+        Choose a font:
+        <select name="font" id="font">
+            <option value="" selected>Choose Font</option>
+            <option value="arial" id="arial">Arial</option>
+            <option value="times" id="times">Times New Roman</option>
+            <option value="verdana" id="verdana">Verdana</option>
+        </select>
+        <br><br>
+        Specify a font size:<br>
+        <input type="text" id="fontsize" width="20%" placeholder="Enter font size">
+        <br><br>
+        Select border style:<br>
+        <input type="radio" id="none" name="borderStyle" value="None"><label for="borderStyle">None</label>
+        <input type="radio" id="double" name="borderStyle" value="dotted"><label for="borderStyle">Double</label>
+        <input type="radio" id="solid" name="borderStyle" value="solid"><label for="borderStyle">Solid</label>
+        <br><br>
+        <input type="checkbox" id="addpic" name="addpicture" value="addpic">Add the default picture
+        <br><br>
+        Enter the greeting text below:<br>
+        <textarea id="greeting" name="greeting" width="200" height="300"></textarea><br><br> 
+        <button id="update">Update</button>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Bio-data</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css">
+		<script src="jquery-3.7.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+		<script	src="bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                    // var marks1 = document.getElementById("marks1").innerHTML;
+                    // var marks2 = document.getElementById("marks2").innerHTML;
+                    // console.log(marks1,marks2);
+                    // var finalm = parseInt(marks1) + parseInt(marks2);
+                    // $("#final").text(finalm);
+                    // console.log(finalm);
+                    console.log("HEELEO1");
+                    // $("#finalmarks").change(function() {
+                    //     console.log("HEELE");
+                    //     if ($(this).prop("checked")) {
+                    //         var marks1 = parseInt($("#marks1").text());
+                    //         var marks2 = parseInt($("#marks2").text());
+                    //         var finalm = marks1 + marks2;
+                    //         $("#final").text(finalm);
+                    //     } else {
+                    //         $("#final").empty();
+                    //     }
+                    // });
+                    document.getElementById('finalmarks').onclick = function () { 
+                        console.log('You clicked left radio button');  
+                        var marks1 = parseInt($("#marks1").text());
+                        var marks2 = parseInt($("#marks2").text());
+                        console.log(marks1,marks2);
+                        var finalm = marks1 + marks2;
+                        $("#final").text(finalm);
+                    }
+                    
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <p class="h1 ">Student Information</p><br>
+            <form>
+                Name: <input type="text" id="fname"><br><br>
+                Gender: &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="male" name="gender"><label for="male">Male</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="female" name="gender"><label for="female">Female</label><br><br>
+                <table class="table table-info table-striped table-md">
+                    <caption>Marks</caption>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                    </tr>
+                    <tr>
+                        <td>ML</td>
+                        <td id="marks1">46</td>
+                    </tr>
+                    <tr>
+                        <td>DL</td>
+                        <td id="marks2">48</td>
+                    </tr>
+                </table>
+                <input type="checkbox" name="finalmarks" value="finalmarks" id="finalmarks"><label for="finalmarks">&nbsp;&nbsp;Show Total Marks</label></input><br>
+                <input type="radio" name="radiomarks" value="radiomarks" id="radiomarks">Show final Marks
+                <p> Total marks of the student = <span id="final"></span></p>
+            </form>
+        </div>
+    </body>
+</html>
