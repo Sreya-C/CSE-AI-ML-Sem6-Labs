@@ -1,6 +1,10 @@
-from django import forms 
-class LoginForm(forms.Form):
-	CHOICES= (('1','Toyota'),('2','Honda'),('3','Tata'),('4','Ford'))
-	manufact = forms.ChoiceField(widget=forms.Select, choices=CHOICES)
-	model = forms.CharField(widget = forms.Textarea)
-	
+from django import forms   
+
+class CarForm(forms.Form):
+    choices = [
+        ('Suzuki', 'Suzuki'),
+        ('Toyota', 'Toyota'),
+        ('Honda', 'Honda'),
+    ]
+    manufacturer = forms.ChoiceField(label="Car Manufacturer", choices=choices)
+    model_name = forms.CharField(label="Model Name")
