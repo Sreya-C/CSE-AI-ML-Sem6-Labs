@@ -1,15 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>SecondPage</title>
     </head>
     <body>
-        {% if context %}
-        Name: {{ context.name }}
-        Roll: {{ context.roll }}
-        Subject: {{ context.subject}}
+        {% if name and roll and subjects %}
+        Name: {{ name }}
+        Roll: {{ roll }}
+        Subject: {{ subjects }}
+        {% else %}
+        <p>Data not found in session</p>
         {% endif %}
-        <form action="." method="post">
+        <form action="{% url 'firstpage' %}" method="post">
             {% csrf_token %}
             <input type="submit" value="Go Back">
         </form>
