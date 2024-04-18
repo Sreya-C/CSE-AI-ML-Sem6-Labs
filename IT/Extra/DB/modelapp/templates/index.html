@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Models</title></head>
+    <body>
+        <form action="/createpage/" method=post>
+            {% csrf_token %}
+            {{ cat_form.as_p }}<br>
+            {{ page_form.as_p }}<br>
+            <input type=submit>
+        </form><hr>
+        {% for cat in categories %}
+            <h2>{{cat.name}}</h2>
+            <p>{{cat.visits}}</p>
+            <p>{{cat.likes}}</p><hr>
+        {% endfor %}
+        <hr>
+        {% for page in pages %}
+            <h2>{{page.category}}</h2>
+            <p>{{page.title}}</p>
+            <p>{{page.url}}</p>
+            <p>{{page.views}}</p><hr>
+        {% endfor %}
+    </body>
+</html>

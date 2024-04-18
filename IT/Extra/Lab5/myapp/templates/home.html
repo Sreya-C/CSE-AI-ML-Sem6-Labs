@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Details</title>
+        
+    </head>
+    <body>
+        <h1>Student Details</h1>
+        <form>
+            Enter student name:
+            <input type="text" name="name" id="name"><br>
+            Enter date of birth:
+            <input type="date" name="dob" id="dob"><br>
+            Enter Physics Marks:
+            <input type="number" name="pmarks" id="pmarks"><br>
+            Enter English Marks:
+            <input type="number" name="emarks" id="emarks"><br>
+            Enter Chemistry Marks:
+            <input type="number" name="cmarks" id="cmarks">  <br>
+            <button type="button" id="submitbtn">Submit</button>
+        </form>
+        <br><br><br><br>
+        <div id="all"></div>
+        <script>
+            document.getElementById("submitbtn").addEventListener("click", function(){
+                console.log("Here");;
+                var nam = document.getElementById("name").value;
+                var dob = document.getElementById("dob").value;
+                var pmarks =parseInt(document.getElementById("pmarks").value);
+                var emarks = parseInt(document.getElementById("emarks").value);
+                var cmarks = parseInt(document.getElementById("cmarks").value);
+                var total = pmarks + cmarks + emarks
+                var percentage = total / 3;
+                var text = "Student Name: " + nam + ", Date of Birth: " + dob + ", Total Marks: " + total + ", Percentage: " + percentage;
+                document.getElementById("all").innerHTML = text;
+            });
+        </script>
+    </body>
+</html>

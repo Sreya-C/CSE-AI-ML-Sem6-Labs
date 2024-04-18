@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Student</title></head>
+    <body>
+        <form action="/student/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+        <table>
+            <caption>Student Table</caption>
+            <thead>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Course Name</th>
+                <th>Date of Birth</th>
+                <th>Action</th>
+            </thead>
+            {% for student in students %}
+            <tr>
+                <td>{{student.sid}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.cname}}</td>
+                <td>{{student.dob}}</td>
+                <td>
+                    <a href="/edit/{{student.sid}}">Edit</a>
+                    <a href="/delete/{{student.sid}}">Delete</a>
+                </td>
+            </tr>    
+            {%endfor%}
+        </table>
+    </body>
+</html>

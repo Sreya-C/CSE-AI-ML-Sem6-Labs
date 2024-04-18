@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Models</title></head>
+    <body>
+        <form action="/createblog/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}<br>
+            sample text
+            <input type=submit>
+        </form><hr>
+        {% for post in posts %}
+            <h2>{{post.title}}</h2>
+            <p>{{post.timestamp}}</p>
+            <p>{{post.body}}</p><hr>
+        {% endfor %}
+    </body>
+</html>

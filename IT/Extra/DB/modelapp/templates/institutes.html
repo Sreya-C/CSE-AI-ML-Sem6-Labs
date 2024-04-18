@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Django Institutes</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .edit-btn, .delete-btn {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 8px 12px;
+                text-align: center;
+                text-decoration:none; 
+                display: inline-block;
+                font-size: 14px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            .delete-btn {
+                background-color: #f44336;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="home/" method=post>
+            {% csrf_token %}
+            {{ ins_form.as_p }}<br>
+            <input type="submit">
+        </form>
+        <table>
+            <caption>All Institutes</caption>
+            <tr>
+                <th>IID</th>
+                <th>Name</th>
+                <th>No of Course</th>
+                <th>Actions</th>
+            </tr>
+            {% for ins in institutes %}
+                <tr>
+                    <td>{{ ins.iid }}</td>
+                    <td>{{ ins.name }}</td>
+                    <td>{{ ins.nocourse }}</td>
+                    <td>
+                        <a href="{% url 'edit_institute' ins.id %}" class="edit-btn">Edit</a>
+                        <a href="{% url 'delete_institute' ins.id %}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

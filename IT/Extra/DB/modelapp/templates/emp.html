@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Employees</title></head>
+    <body>
+        <form action="add/" method=post>
+            {% csrf_token %}
+            {{ emp_form.as_p }}<br>
+            <input type="submit">
+        </form>
+
+        Enter Company Name to filter by: 
+        <form action="get/" method=post>
+            {% csrf_token %}
+            <input type='text' name='cname'>
+            <input type="submit">
+        </form>
+        <hr>
+        
+        {% for emp in employees %}
+            <h2>{{ emp.pname }}</h2>
+            <p>company : {{ emp.cname }}</p>
+            <p>salary : {{ emp.salary }}</p>
+            <p>street : {{ emp.street }}</p>
+            <p>city : {{ emp.city }}</p>
+        {% endfor %}
+        <hr>
+    </body>
+</html>

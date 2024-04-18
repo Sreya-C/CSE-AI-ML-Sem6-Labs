@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Second Page</title></head>
+    <body>
+        <form action="" method="post">
+            {% csrf_token %}
+            Name: {{name}}<br>
+            Roll Number: {{roll}}<br>
+            Subject: {{subject}}
+            <!-- <input type="Submit" value="Go To First"> -->
+        </form>
+        <a href = "/firstpage/">First Page</a>
+    </body>
+</html>

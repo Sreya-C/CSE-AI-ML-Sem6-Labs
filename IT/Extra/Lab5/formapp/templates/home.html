@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Input</title></head>
+    <body>
+        <form action="" method="POST">
+            {% csrf_token %} 
+            {{ form.as_table }}
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

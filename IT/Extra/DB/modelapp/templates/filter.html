@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Company Emps</title></head>
+    <body>
+        {% csrf_token %}
+        <h1>Employees with Company = {{company}}: </h1>
+        {% for emp in emps %}
+        <p>Name: {{emp.pname}}</p>
+        <p>Salary: {{emp.salary}}</p>
+        <p>Street: {{emp.street}}</p>
+        <p>City: {{emp.city}}</p><hr>
+        {% endfor %}
+    </body>
+</html>

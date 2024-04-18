@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Product</title></head>
+    <body>
+        <form action="/createprod/" method="post">
+            {% csrf_token %}
+            {{prod_form.as_p}}
+            <input type="submit" value="Create">
+        </form>
+        <ul>
+        {% for prod in products %}
+            <li>
+               Title: {{prod.title}}<br>
+               Price: {{prod.price}}<br>
+               Description: {{prod.description}}<br>
+            </li>
+        {%endfor%}
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Django Names</title></head>
+    <body>
+        {% for human in humans %}
+            <h1>Name: {{human.name}}</p>
+            <a href="/details/{{human.pid}}/">Get Details</a>
+        {%endfor%}
+        </ul>
+    </body>
+</html>
